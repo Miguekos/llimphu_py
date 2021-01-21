@@ -24,7 +24,7 @@ class Registros(BaseModel):
     service_pago_del_cliente: str
     # service_restante_cliente: ""
     service_tipo_de_pago: str
-    tabla_de_servicios: List[object] = []
+    tabla_de_servicios: List = []
     total_a_pagar_cliente: float
 
     # nombre: str
