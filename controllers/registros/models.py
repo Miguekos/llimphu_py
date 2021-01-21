@@ -5,7 +5,7 @@ from pydantic import BaseModel, validator
 from typing import List, Optional
 from pytz import timezone
 
-class Servicios(BaseModel):
+class Registros(BaseModel):
     """[summary]
         Base pet abstraction model.
 
@@ -15,11 +15,23 @@ class Servicios(BaseModel):
     Arguments:
         BaseModel {[type]} -- [description]
     """
-    nombre: str
-    descripcion: str
-    precio: float
-    descuento: float = None
-    activo: str = None
+    deuda_pendiente_cliente: str
+    direccion_cliente: str
+    nombre_cliente: str
+    # nombre_tipo_de_pago: ""
+    # servi_selec: ""
+    # service_cliente: ""
+    service_pago_del_cliente: str
+    # service_restante_cliente: ""
+    service_tipo_de_pago: str
+    tabla_de_servicios: List[object] = []
+    total_a_pagar_cliente: float
+
+    # nombre: str
+    # descripcion: str
+    # precio: float
+    # descuento: float = None
+    # activo: str = None
     created_at: datetime = None
     last_modified: datetime = None
 
@@ -34,7 +46,7 @@ class Servicios(BaseModel):
         return v or values['created_at']
 
 
-class ServiciosOnDB(Servicios):
+class RegistrosOnDB(Registros):
     """[summary]
     Actual model used at DB level
 

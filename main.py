@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from controllers.users.routes import user_router
 from controllers.uploadfile.routes import uploadfile_router
 from controllers.servicios.routes import servicios_router
+from controllers.registros.routes import registros_router
 
 from config import config
 
@@ -48,6 +49,13 @@ app.include_router(
     uploadfile_router,
     prefix="/lav/upload",
     tags=["upload"],
+    responses={404: {"description": "Not found"}},
+)
+
+app.include_router(
+    registros_router,
+    prefix="/lav/registros",
+    tags=["registros"],
     responses={404: {"description": "Not found"}},
 )
 
