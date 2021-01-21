@@ -1,0 +1,14 @@
+fastapi:
+  debug: true
+
+databases:
+  default:
+    ENGINE: 'mongodb'
+    DRIVER: 'motor'
+    NAME: 'lav_llimphu'
+    USER: ''
+    PASSWORD: ''
+    HOST: '95.111.235.214'
+    PORT: 32768
+#    HOST: '127.0.0.1'
+#    PORT: 27017
