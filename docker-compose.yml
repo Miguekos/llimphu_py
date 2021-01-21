@@ -1,9 +1,9 @@
 version: "2"
 services:
   app:
-    container_name: api_lav_llimphu
+#    container_name: api_lav_llimphu
     image: api_lav_llimphu:2.0
-    # build: .
+    build: .
     command: uvicorn main:app --host "0.0.0.0" --port 4242 --log-level "info" --reload
 #    volumes:
 #      - /usr/local/volumes/fileserver/envios/:/app/fileserver/
