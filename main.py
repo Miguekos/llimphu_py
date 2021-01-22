@@ -5,6 +5,7 @@ from controllers.users.routes import user_router
 from controllers.uploadfile.routes import uploadfile_router
 from controllers.servicios.routes import servicios_router
 from controllers.registros.routes import registros_router
+from controllers.precios.routes import precios_router
 
 from config import config
 
@@ -66,13 +67,12 @@ app.include_router(
     responses={404: {"description": "Not found"}},
 )
 
-
-# app.include_router(
-#     pets_router,
-#     prefix="/lav/registros",
-#     tags=["registros"],
-#     responses={404: {"description": "Not found"}},
-# )
+app.include_router(
+    precios_router,
+    prefix="/lav/precios",
+    tags=["precios"],
+    responses={404: {"description": "Not found"}},
+)
 
 @app.on_event("startup")
 async def app_startup():
